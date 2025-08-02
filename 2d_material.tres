@@ -4,12 +4,8 @@
 code = "shader_type canvas_item;
 
 instance uniform vec3 mesh_color :source_color = vec3 (1.0,1.0,1.0);
-instance uniform vec4 color_value :source_color,instance_index(1) = vec4 (1.0,1.0,1.0,1.0);
-instance uniform vec3 gravity:instance_index(6) = vec3(0.0, -9.8, 0.0);
 
 void fragment(){
-	color_value;gravity;
-	
 	COLOR.rgb *= mesh_color;
 }"
 

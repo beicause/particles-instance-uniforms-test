@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhwoivdlxyvr2"]
+[gd_scene load_steps=9 format=3 uid="uid://bhwoivdlxyvr2"]
 
 [ext_resource type="Material" uid="uid://l02x1emg7nlt" path="res://3d_material.tres" id="1_y2yqg"]
 [ext_resource type="Material" uid="uid://cjitcxu2rcbby" path="res://prcoess_material.tres" id="2_fji6l"]
@@ -18,6 +18,9 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="TorusMesh" id="TorusMesh_fji6l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73ytm"]
+vertex_color_use_as_albedo = true
 
 [node name="3d" type="Node3D"]
 
@@ -39,10 +42,9 @@ draw_pass_1 = SubResource("TorusMesh_fji6l")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.133261, 0, 0)
-material_override = ExtResource("1_y2yqg")
-instance_shader_parameters/color_value = Color(0.39378598, 0.63510627, 0.9010524, 1)
+material_override = SubResource("StandardMaterial3D_73ytm")
+instance_shader_parameters/color_value = Color(0.35180497, 0.38285515, 0.5646988, 1)
 instance_shader_parameters/gravity = Vector3(9, 0, 0)
-instance_shader_parameters/mesh_color = Color(0.8313973, 0.38751844, 0.54305935, 1)
 amount = 4
 process_material = ExtResource("2_fji6l")
 draw_pass_1 = SubResource("TorusMesh_fji6l")
