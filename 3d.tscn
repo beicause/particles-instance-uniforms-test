@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhwoivdlxyvr2"]
+
+[ext_resource type="Material" uid="uid://l02x1emg7nlt" path="res://3d_material.tres" id="1_y2yqg"]
+[ext_resource type="Material" uid="uid://cjitcxu2rcbby" path="res://prcoess_material.tres" id="2_fji6l"]
+[ext_resource type="PackedScene" uid="uid://cwdqdac6lut2l" path="res://2d.tscn" id="3_73ytm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p1i0w"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_y2yqg"]
+sky_material = SubResource("ProceduralSkyMaterial_p1i0w")
+
+[sub_resource type="Environment" id="Environment_fji6l"]
+background_mode = 2
+sky = SubResource("Sky_y2yqg")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="TorusMesh" id="TorusMesh_fji6l"]
+
+[node name="3d" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fji6l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = ExtResource("1_y2yqg")
+instance_shader_parameters/color_value = Color(0.3250412, 0.8231136, 0.91504115, 1)
+instance_shader_parameters/gravity = Vector3(10, -9.8, 0)
+instance_shader_parameters/mesh_color = Color(0.3099237, 0.3824806, 0.4896174, 1)
+amount = 4
+process_material = ExtResource("2_fji6l")
+draw_pass_1 = SubResource("TorusMesh_fji6l")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.133261, 0, 0)
+material_override = ExtResource("1_y2yqg")
+instance_shader_parameters/color_value = Color(0.39378598, 0.63510627, 0.9010524, 1)
+instance_shader_parameters/gravity = Vector3(9, 0, 0)
+instance_shader_parameters/mesh_color = Color(0.8313973, 0.38751844, 0.54305935, 1)
+amount = 4
+process_material = ExtResource("2_fji6l")
+draw_pass_1 = SubResource("TorusMesh_fji6l")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.80693394, 0.4385377, -0.3956542, -0.18104547, 0.82127357, 0.54104733, 0.56221, -0.36495805, 0.7421089, -0.15358865, 1.577184, 1.826066)
+
+[node name="Node2D" parent="." instance=ExtResource("3_73ytm")]
