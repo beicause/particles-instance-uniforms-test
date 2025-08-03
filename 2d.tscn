@@ -23,6 +23,7 @@ metadata/_snap_enabled = true
 material = ExtResource("1_adb1b")
 instance_shader_parameters/color_value = Color(1, 0.12033569, 0.54311514, 1)
 instance_shader_parameters/gravity = Vector3(200, 200, 0)
+instance_shader_parameters/mesh_color = Color(1, 1, 1, 1)
 position = Vector2(54.021088, 56.537613)
 texture = SubResource("GradientTexture2D_adb1b")
 process_material = ExtResource("2_adb1b")

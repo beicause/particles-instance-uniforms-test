@@ -34,7 +34,7 @@ shadow_enabled = true
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 material_override = ExtResource("1_y2yqg")
 instance_shader_parameters/color_value = Color(0.3250412, 0.8231136, 0.91504115, 1)
-instance_shader_parameters/gravity = Vector3(10, -9.8, 0)
+instance_shader_parameters/gravity = Vector3(-5, -9, 0)
 instance_shader_parameters/mesh_color = Color(0.3099237, 0.3824806, 0.4896174, 1)
 amount = 4
 process_material = ExtResource("2_fji6l")
@@ -50,6 +50,6 @@ process_material = ExtResource("2_fji6l")
 draw_pass_1 = SubResource("TorusMesh_fji6l")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.80693394, 0.4385377, -0.3956542, -0.18104547, 0.82127357, 0.54104733, 0.56221, -0.36495805, 0.7421089, -0.15358865, 1.577184, 1.826066)
+transform = Transform3D(0.80693394, 0.4385377, -0.39565426, -0.18104547, 0.8212736, 0.54104733, 0.56221, -0.3649581, 0.7421088, -0.15358865, 1.577184, 3.0950372)
 
 [node name="Node2D" parent="." instance=ExtResource("3_73ytm")]
